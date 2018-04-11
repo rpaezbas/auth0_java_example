@@ -1,7 +1,6 @@
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,15 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.auth0.client.auth.*;
-import com.auth0.client.mgmt.filter.UserFilter;
-import com.auth0.exception.APIException;
-import com.auth0.exception.Auth0Exception;
-import com.auth0.json.auth.CreatedUser;
-import com.auth0.json.auth.TokenHolder;
-import com.auth0.net.AuthRequest;
-import com.auth0.net.Request;
-import com.auth0.net.SignUpRequest;
+
 
 /**
  * Servlet implementation class Servlet
