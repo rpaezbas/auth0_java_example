@@ -49,6 +49,7 @@ public class Private extends HttpServlet {
 				//Get the toke in exchange iof the code
 				TokenHolder holder = req.execute();
 				String idToken = holder.getIdToken();
+				System.out.println(idToken);
 				//Auth.clientKey is specified in the auth0 client dashboard as client_secret
 				Algorithm algorithm = Algorithm.HMAC256(AuthUtil.clientKey);
 				// Verifies the signature for the issuer "https://rpaezbas.auth0.com/" with the
@@ -59,12 +60,12 @@ public class Private extends HttpServlet {
 			} catch (Exception exception) {
 				exception.printStackTrace();
 				//If token doesnt verify redirect to login 
-				response.sendRedirect("http://localhost:8080/auth0_3/Servlet");
+				response.sendRedirect("http://localhost:8080/auth0_3/Login");
 			}
 			
 		} else {
 			//If there is no query param means that the user has not logged in.
-			response.sendRedirect("http://localhost:8080/auth0_3/Servlet");
+			response.sendRedirect("http://localhost:8080/auth0_3/Login");
 		}
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
